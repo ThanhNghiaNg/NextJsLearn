@@ -1,10 +1,6 @@
+const styleguide = require("@vercel/style-guide/prettier");
+
 module.exports = {
-  extends: ["next/core-web-vitals", "prettier"],
-  ignorePatterns: ["**/.next/**", "**/node_modules/**"],
-  root: true,
-  settings: {
-    next: {
-      rootDir: ["basics/*/", "dashboard/*/", "seo/"],
-    },
-  },
+  ...styleguide,
+  plugins: [...styleguide.plugins, "prettier-plugin-tailwindcss"],
 };
